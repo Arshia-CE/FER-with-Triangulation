@@ -20,7 +20,7 @@ To run the code in this repository, follow these steps:
 1. Clone the repository to your local machine:
 
    ```
-   git clone <repository_url>
+   git clone https://github.com/Arshia-CE/FER-with-Triangulation.git
    ```
 
 2. Install the required libraries:
