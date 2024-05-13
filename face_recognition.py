@@ -34,18 +34,13 @@ def detect_landmarks(img):
 
 
 if __name__ == '__main__':
-    # set up the 68 point facial landmark detector
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-
-    # bring in the input image
-    img = cv2.imread('Luis.jpg', 1)
-
-    # convert to grayscale
+    
+    img = cv2.imread('dataset/contempt/S502_002_00000009.png', 1)
+    img = cv2.resize(img,(500,500),interpolation=cv2.INTER_CUBIC)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    # detect faces in the image
-    faces_in_image = detector(img_gray, 0)
+    faces_in_image = detector(img_gray, 1)
 
     # loop through each face in image
     for face in faces_in_image:
@@ -61,7 +56,7 @@ if __name__ == '__main__':
         # for each landmark, plot and write number
         for landmark_num, xy in enumerate(landmarks_list, start=1):
             print(len(landmarks_list))
-            cv2.circle(img, (xy[0], xy[1]), 12, (168, 0, 20), -1)
+            cv2.circle(img, (xy[0], xy[1]), 14, (255, 0, 0), -1)
             cv2.putText(img, str(landmark_num), (xy[0] - 7, xy[1] + 5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 255, 255),
                         1)
 

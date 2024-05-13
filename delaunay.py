@@ -111,9 +111,8 @@ if __name__ == '__main__':
     # Allocate space for the triangulated face
     triangulated_face = np.zeros_like(img)
     # Draw delaunay triangles
-    draw_delaunay(triangulated_face, subdiv, (255, 255, 255))
-    # extract desired features
-    extract_features(img)
+    draw_delaunay(triangulated_face, subdiv, (125, 125, 255))
+    
     # Show original image and triangulated face
     cv2.imshow('Original Image', img)
     cv2.imshow('Triangulated Face', triangulated_face)
