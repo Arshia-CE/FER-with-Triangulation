@@ -105,6 +105,7 @@ if __name__ == '__main__':
     # 4, 6, 8, 10, 12, 14, 16, 18, 20, 21, 22, 23, 25, 27, 29, 30, 31, 35, 36, 39, 42, 45, 48, 51, 54, 57] landmarks
     # = [landmarks[i] for i in mask]
     _, landmarks = detect_landmarks(img)
+    
     # Compute triangulated face
     subdiv = delaunay_triangulation(img, landmarks)
 

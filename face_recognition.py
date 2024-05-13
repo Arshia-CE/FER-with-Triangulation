@@ -37,7 +37,7 @@ if __name__ == '__main__':
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
     
-    img = cv2.imread('dataset/contempt/S502_002_00000009.png', 1)
+    img = cv2.imread('dataset/anger/S034_003_00000025.png', 1)
     img = cv2.resize(img,(500,500),interpolation=cv2.INTER_CUBIC)
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces_in_image = detector(img_gray, 1)
